@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('industrias', function (Blueprint $table) {
             $table->id();
-            
             $table->string('pais');
             $table->string('dni');
             $table->string('nombre');
@@ -30,16 +29,8 @@ return new class extends Migration
             $table->string('fax')->nullable();;
             $table->integer('movil')->nullable();;
 
-            $table->string('actividad')->nullable();;
-
             $table->string('email')->unique()->nullable();;
 
-            $table->string('registro_sanitario')->nullable();
-            $table->string('registro_compra')->nullable();
-
-
-
-            $table->string('status', 45)->nullable();
             $table->timestamps();
         });
     }
@@ -49,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('industrias');
     }
 };
