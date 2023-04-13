@@ -13,10 +13,7 @@ class Remolque extends Model
     use HasFactory;
     protected $fillable = ['letraq','marca','modelo','matricula','tipo','vehiculo_id']; 
 
-    public function remolques(): HasMany
-    {
-        return $this->hasMany(Vehiculo::class);
-    }
+  
 
     public function vehiculo(): BelongsTo
     {

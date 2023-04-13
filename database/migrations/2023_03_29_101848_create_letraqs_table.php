@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('letraqs', function (Blueprint $table) {
             $table->id();
             $table->string('letraq');
+            $table->string('modelo')->nullable();
+            
             $table->string('tipo');//industria, vehiculo, remolque ...
 
             $table->timestamps();

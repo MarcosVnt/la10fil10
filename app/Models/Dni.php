@@ -10,12 +10,12 @@ class Dni extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['dni', 'codigo_pais', 'direccion1', 'direccion2','comunidad','provincia', 'localidad', 'codigo_postal', 'pais'];
+    protected $fillable = ['dni', 'country_id','nombre', 'direccion1', 'direccion2','localidad','municipio','provincia', 'codigo_postal','telefono','fax','movil','email'];
 
 
 
     public function country(): BelongsTo
     {
-        return $this->belongsTo(Country::class, 'country_code', 'code');
+        return $this->belongsTo(Country::class);
     }
 }

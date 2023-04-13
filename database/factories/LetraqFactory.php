@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\country>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Letraq>
  */
-class CountryFactory extends Factory
+class LetraqFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,11 +17,10 @@ class CountryFactory extends Factory
     public function definition(): array
     {
         return [
-
-            'code' => 'ES', 'name' => 'ESPAÑA'
-            
-               
-            
+            'letraq' => fake()->sentence(14),
+            'tipo' => fake()->text(''),
+            'modelo' => fake()->text('')
+          
         ];
     }
 }

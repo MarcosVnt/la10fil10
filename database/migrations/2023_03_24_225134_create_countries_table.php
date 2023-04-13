@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('remolques', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
+          /*   $table->string('code', 3)->primary();
+            $table->string('name', 255);
+            $table->jsonb('states')->nullable(); */
+
             $table->id();
+            $table->string('code',2)->unique();
+            $table->string('name');
+
+
             $table->timestamps();
         });
     }
@@ -22,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('remolques');
+        Schema::dropIfExists('countries');
     }
 };

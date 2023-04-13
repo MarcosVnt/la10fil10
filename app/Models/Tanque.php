@@ -11,7 +11,7 @@ class Tanque extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['letraq','tipo','modelo']; 
+    protected $fillable = ['explotacion_id','letraq','tipo','modelo']; 
 
 
 

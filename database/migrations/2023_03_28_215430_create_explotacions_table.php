@@ -37,8 +37,8 @@ return new class extends Migration
             $table->string('registro_compra')->nullable();
             $table->string('codigo_laboratorio')->nullable();
 
-            $table->foreignId('empresa_id')->references('id')->on('empresas');
-
+            //$table->foreignId('empresa_id')->references('id')->on('empresas');
+            $table->foreignId('empresa_id')->constrained()->cascdeOnDelete();
 
             $table->string('status', 45)->nullable();
         

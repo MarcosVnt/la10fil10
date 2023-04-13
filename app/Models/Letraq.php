@@ -9,7 +9,7 @@ class Letraq extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['letraq','tipo']; 
+    protected $fillable = ['letraq','tipo','modelo']; 
 
 
 

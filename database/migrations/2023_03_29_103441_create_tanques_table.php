@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tanques', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('explotacion_id')->constrained()->cascdeOnDelete();
             $table->string('letraq');
             $table->string('modelo');
             $table->string('tipo');

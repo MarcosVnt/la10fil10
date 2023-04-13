@@ -17,16 +17,16 @@ return new class extends Migration
             $table->string('marca');
             $table->string('modelo');
             $table->string('matricula');
-            $table->string('letraq');
             
-            $table->string('tipo');// remolque , tractora
             
 
-            $table->foreignId('letraq_id')->references('id')->on('letraqs');
+            $table->foreignId('letraq_id')->references('id')->on('letraqs')->nullable()->onDelete('cascade');
 
-            $table->foreignId('remolque_id')->references('id')->on('remolques')->nullable();
+            $table->foreignId('remolque_id')->references('id')->on('letraqs')->nullable()->onDelete('cascade');
+          
+            $table->foreignId('dni_id')->references('id')->on('dnis')->nullable()->onDelete('cascade');
 
-
+            $table->boolean('active')->default(true);
 
             $table->timestamps();
         });
