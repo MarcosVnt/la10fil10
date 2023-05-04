@@ -38,6 +38,8 @@ class TanquesRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('letraq'),
+                Tables\Columns\TextColumn::make('tipo'),
+                Tables\Columns\TextColumn::make('modelo'),
             ])
             ->filters([
                 //

@@ -144,7 +144,7 @@ class VehiculoResource extends Resource
                     Forms\Components\Select::make('remolque_id')
                     ->relationship('letraq', 'letraq')
                     ->label('Remolque')
-                    ->searchable()
+                  
                     ->createOptionForm([
                         Card::make()
                         ->schema([
@@ -180,7 +180,12 @@ class VehiculoResource extends Resource
         return $table
             ->columns([
                
-                
+                Tables\Columns\TextColumn::make('matricula'),
+                Tables\Columns\TextColumn::make('marca'),
+                Tables\Columns\TextColumn::make('modelo'),
+
+
+
 
                 //tipo, letraq_id, remolque_id, dni_id, ative 
 

@@ -17,26 +17,28 @@ return new class extends Migration
             $table->string('pais');
             $table->string('dni');
             $table->string('nombre');
+            
+            $table->date('fecha_alta')->nullable();
+            $table->date('fecha_baja')->nullable();
 
-            $table->string('direccion1');
-            $table->string('direccion2')->nullable();
+            $table->string('causa_baja')->nullable();
 
-            $table->string('localidad')->nullable();;
-            $table->string('municipio')->nullable();;
-            $table->string('provincia')->nullable();;
-            $table->integer('codigo_postal')->nullable();;
+            $table->string('provincia')->nullable();
+            $table->string('municipio')->nullable();
+            $table->string('comarca')->nullable();
+            $table->string('poblacion')->nullable();
 
-            $table->string('telefono')->nullable();;
-            $table->string('fax')->nullable();;
-            $table->integer('movil')->nullable();;
+           
 
-            $table->string('email')->unique()->nullable();;
+            $table->string('telefono')->nullable();
+            $table->string('fax')->nullable();
+            $table->integer('movil')->nullable();
 
-            $table->string('codigo_simogan')->nullable();;
-            $table->string('registro_sanitario')->nullable();
-            $table->string('registro_compra')->nullable();
-            $table->string('codigo_laboratorio')->nullable();
+            $table->string('email')->unique()->nullable();
 
+            $table->string('codigo_rega')->nullable();
+            $table->string('codigo_simogan')->nullable();
+           
             //$table->foreignId('empresa_id')->references('id')->on('empresas');
             $table->foreignId('empresa_id')->constrained()->cascdeOnDelete();
 

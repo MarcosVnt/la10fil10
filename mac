@@ -1,0 +1,201 @@
+composer create-project laravel/laravel la10fil10
+
+
+composer require laravel/breeze --dev
+
+
+php artisan breeze:install
+ 
+php artisan migrate
+npm install
+npm run dev
+
+php artisan breeze:install --dark
+
+
+
+
+composer require filament/filament:"^2.0"
+
+
+php artisan filament:check-translations es --source=app
+
+php artisan make:filament-user
+
+
+
+php artisan vendor:publish --tag=filament-config
+  Copying file [vendor/filament/filament/config/filament.php] to [config/filament.php] ..... DONE
+
+
+php artisan vendor:publish --tag=filament-translations
+ Copying file [vendor/filament/filament/resources/lang] to [lang/vendor/filament] 
+
+php artisan vendor:publish --tag=filament-forms-translations
+php artisan vendor:publish --tag=filament-tables-translations
+php artisan vendor:publish --tag=filament-support-translations
+
+
+composer require doctrine/dbal --dev
+
+
+php artisan make:model Country -m 
+
+php artisan make:model Dni -m 
+      conuntries 
+      comunidades 
+      provincias
+      municipios 
+
+      $table->string('nombre');
+      protected $fillable = ['letraq','tipo']; 
+      $table->foreignId('industria_id')->references('id')->on('orders');
+
+
+      php artisan make:model Empresa -m 
+
+php artisan make:model Laboratorio -m 
+php artisan make:model Letraq -m 
+ojo one to one polymorphic 
+
+
+
+php artisan make:model Industria -m 
+php artisan make:model Centrorecogida -m 
+
+// 1 industria tiene varios centros de regoida
+
+
+
+
+
+php artisan make:model Explotacion -m 
+php artisan make:model Tanque -m 
+
+
+
+php artisan make:model Agenciatransporte -m
+php artisan make:model Vehiculo -m 
+php artisan make:model Remolque -m 
+1 vehiculo varios remolques 
+
+
+php artisan make:model Conductor -m 
+1 conductor tiene una agencia 
+1 conductor tiene un vehiculo
+
+
+php artisan make:model Rechazo -m 
+php artisan make:model Incidencia -m 
+
+
+php artisan make:model Ruta -m 
+php artisan make:model Rutero -m 
+
+
+php artisan make:model Recogida -m 
+php artisan make:model Recogida_otra -m
+php artisan make:model Descarga -m 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+php artisan make:filament-resource Empresa --view --generate
+
+php artisan make:filament-resource Country --view --generate
+
+
+php artisan make:filament-resource Dni --view --generate
+php artisan make:filament-resource Letraq --view --generate
+
+
+php artisan make:filament-resource Explotacion --view --generate
+
+php artisan make:filament-resource Tanque
+
+
+
+php artisan make:model Pais -mfc 
+model , migration, factory , controller 
+
+Model [app/Models/Pais.php] created successfully.
+
+   INFO  Factory [database/factories/PaisFactory.php] created successfully.
+
+   INFO  Migration [database/migrations/2023_03_27_224752_create_pais_table.php] created successfully.
+
+   INFO  Controller [app/Http/Controllers/PaisController.php] c
+
+
+ $table->string('code', 3)->primary();
+            $table->string('name', 255);
+            $table->jsonb('states')->nullable();
+
+
+
+
+
+FILAMENT RELATION MANAGER 
+
+
+php artisan make:filament-relation-manager ExplotacionResource tanques name
+
+
+
+
+
+
+#39b6e8
+
+git remote add origin https://github.com/MarcosVnt/la10fil10.git
+git branch -M main
+git push -u origin main
+
+
+
+
+
+
+
+
+https://filamentphp.com/blog/how-to-write-tests-for-filament-admin-panels
+
+
+
+php artisan pest:test LetraQTest
+php artisan make:filament-resource LetraQ --simple
+
+
+composer require pestphp/pest-plugin-laravel --dev
+php artisan pest:install
+
+
+
+
+
+
+
+
+10 navigation group and icons 
+00000000000000000000000000000
+protected static ?string $navigationGroup = 'Comunes';
+
+
+
+php artisan migrate:rollback
+php artisan migrate --seed 
+
+
+
